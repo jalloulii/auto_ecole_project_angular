@@ -1,0 +1,47 @@
+<p>test comp!</p>
+<p>Hello yassine</p>
+<br>
+<ul *ngFor="let user of users ;let i = index">
+  <li class="text-primary">{{user}} <button (click)="deletUser(user,i)" class="btn btn-danger"><i
+        class="fas fa-trash-alt"></i></button></li>
+</ul>
+<div class="alert" [ngClass]="{'alert-danger' : isError,'alert-success' : !isError}">new alert
+</div>
+
+<h2>données : </h2>
+<p>{{JSONuser.firstname}}</p>
+<p>{{JSONuser.lastname}}</p>
+<p>{{JSONuser.phone}}</p>
+<p>{{JSONuser.adress.city}}</p>
+<p>{{JSONuser.adress.zip}}</p>
+<p>{{JSONuser.adress.street}}</p>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>firstname</th>
+      <th>lastname</th>
+      <th>phone</th>
+      <th>city</th>
+      <th>zip</th>
+      <th>street</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usersTable;let i = index">
+      <td>{{i+1}}</td>
+      <td>{{JSONuser.firstname}}</td>
+      <td>{{JSONuser.lastname}}</td>
+      <td>{{JSONuser.phone}}</td>
+      <td>{{JSONuser.adress.city}}</td>
+      <td>{{JSONuser.adress.zip}}</td>
+      <td>{{JSONuser.adress.street}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul *ngFor="let user of usersFromAPI">
+  <li> {{user.name}} </li>
+</ul>

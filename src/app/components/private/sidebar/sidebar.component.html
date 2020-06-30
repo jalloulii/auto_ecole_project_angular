@@ -1,0 +1,62 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/Dashboard">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fas fa-laugh-wink"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <a class="nav-link" routerLink="/dashboard">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a>
+  </li>
+
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Nav Item - users -->
+  <li *ngIf="isAdmin" class="nav-item active">
+    <a routerLink="/user-list" class="nav-link">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>gestion des users</span></a>
+  </li>
+
+  <!-- Nav Item - vehicule -->
+  <li *ngIf="isAdmin" class="nav-item active">
+    <a class="nav-link" routerLink="/Gvahicule">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>gestion des vheicule</span></a>
+
+    <!-- Nav Item - Dashboard -->
+  <li *ngIf="isAdmin" class="nav-item active">
+    <a routerLink="/Gmoniteurs" class="nav-link">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>gestion des moniteurs</span></a>
+
+  </li>
+  <!-- Nav Item - moniteurs -->
+  <li *ngIf="isUser" class="nav-item active">
+    <a routerLink="/RendezVousUser" class="nav-link">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>rendez vous User</span></a>
+
+  </li>
+  <!-- Nav Item - user -->
+  <li *ngIf="isMonitor" class="nav-item active">
+    <a routerLink="/RendezVousMoniteurs" class="nav-link">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>rendez vous Moniteurs</span></a>
+
+  </li>
+
+
+</ul>

@@ -1,0 +1,119 @@
+<div class="site-wrap" id="home-section">
+
+  <!--header-->
+  <app-header></app-header>
+
+  <div class="site-section bg-image2 overlay" id="contact-section"
+    style="background-image: url('assets/images/hero_1.jpg');">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-7 my-5">
+
+
+
+          <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="p-5 bg-white">
+            <!--
+              formControlName : taamel biha liaison mta les inputs
+            -->
+            <!--
+    registerUser() : heya esm lfunction 
+  -->
+            <h2 class="h4 text-black mb-5">register Form</h2>
+
+            <div class="row form-group">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label class="text-black" for="fname">First Name</label>
+                <input formControlName="firstname" type="text" id="fname" class="form-control rounded-0">
+                <div class="text-danger" *ngIf=" myfirstname.touched &&  myfirstname.invalid">
+                  <div *ngIf="myfirstname.errors.required">firstname is required</div>
+                  <div *ngIf="myfirstname.errors.pattern">firstname is invalid</div>
+                  <div *ngIf="myfirstname.errors.minlength">firstname must contains 2 characteres at least</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="text-black" for="lname">Last Name</label>
+                <input formControlName="lastname" type="text" id="lname" class="form-control rounded-0">
+                <div class="text-danger" *ngIf=" mylastname.touched &&  mylastname.invalid">
+                  <div *ngIf="mylastname.errors.required">lastname is required</div>
+                  <div *ngIf="mylastname.errors.pattern">lastname is invalid</div>
+                  <div *ngIf="mylastname.errors.minlength">lastname must contains 2 characteres at least</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+
+              <div class="col-md-12">
+                <label class="text-black" for="email">Email</label>
+                <input formControlName="email" type="email" id="email" class="form-control rounded-0">
+                <div class="text-danger" *ngIf=" myemail.touched &&  myemail.invalid">
+                  <div *ngIf="myemail.errors.required">email is required</div>
+                  <div *ngIf="myemail.errors.email">email is invalid</div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+
+              <div class="col-md-12">
+                <label class="text-black" for="phone">phone</label>
+                <input formControlName="phone" type="text" id="phone" class="form-control rounded-0">
+                <div class="text-danger" *ngIf=" myphone.touched &&  myphone.invalid">
+                  <div *ngIf="myphone.errors.required">phone is required</div>
+                  <div *ngIf="myphone.errors.pattern">phone is invalid</div>
+                  <div *ngIf="myphone.errors.minlength">phone must contains 8 characteres at least</div>
+                  <div *ngIf="myphone.errors.maxlength">phone must contains max 8 characteres </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+
+
+              <div class="col-md-6">
+                <label class="text-black" for="password">password</label>
+                <input formControlName="password" type="password" id="password" class="form-control rounded-0">
+                <div class="text-danger" *ngIf=" mypassword.touched &&  mypassword.invalid">
+                  <div *ngIf="mypassword.errors.required">password is required</div>
+
+                  <div *ngIf="mypassword.errors.minlength">password must contains 8 characteres at least</div>
+
+                </div>
+              </div>
+
+
+
+              <div class="col-md-6">
+                <label class="text-black" for="confirmPassword">confirmPassword</label>
+                <input formControlName="confirmPassword" type="password" id="confirmPassword"
+                  class="form-control rounded-0">
+                <div class="text-danger" *ngIf="myRpassword.touched &&  myRpassword.invalid">
+                  <div *ngIf="myRpassword.errors.required">password is required</div>
+                  <div *ngIf="myRpassword.errors.minlength">password must contains 8 characteres at least</div>
+                </div>
+                        <div *ngIf="myRpassword.valid && myRpassword.value != mypassword.value" class="text-danger">
+                          passwords mahomch kifkif
+                        </div>
+              </div>
+
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="register" [disabled]="registerForm.invalid || myRpassword.value != mypassword.value"
+                  class="btn btn-primary mr-2 mb-2">
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!--footer-->
+  <app-footer></app-footer>
