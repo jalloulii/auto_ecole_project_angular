@@ -68,7 +68,7 @@ export class RegisterComponent implements OnInit {
   get myRpassword() { return this.registerForm.get('confirmPassword'); }
 
   //zedna function edhy bch les donnes yemchiw ml html lel TS !!
-  registerUser() {
+  addUser() {
     let data = this.registerForm.value;
 
     let user = new User(

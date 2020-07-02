@@ -12,7 +12,7 @@
 
 
 
-          <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="p-5 bg-white">
+          <form [formGroup]="registerForm" (ngSubmit)="addUser()" class="p-5 bg-white">
             <!--
               formControlName : taamel biha liaison mta les inputs
             -->
@@ -93,16 +93,17 @@
                   <div *ngIf="myRpassword.errors.required">password is required</div>
                   <div *ngIf="myRpassword.errors.minlength">password must contains 8 characteres at least</div>
                 </div>
-                        <div *ngIf="myRpassword.valid && myRpassword.value != mypassword.value" class="text-danger">
-                          passwords mahomch kifkif
-                        </div>
+                <div *ngIf="myRpassword.valid && myRpassword.value != mypassword.value" class="text-danger">
+                  passwords mahomch kifkif
+                </div>
               </div>
 
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <input type="submit" value="register" [disabled]="registerForm.invalid || myRpassword.value != mypassword.value"
+                <input type="submit" value="register"
+                  [disabled]="registerForm.invalid || myRpassword.value != mypassword.value"
                   class="btn btn-primary mr-2 mb-2">
               </div>
             </div>

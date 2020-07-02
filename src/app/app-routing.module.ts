@@ -7,7 +7,7 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { Page404Component } from './components/page404/page404.component';
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 
-import { MoniteursComponent } from './components/private/moniteurs/moniteurs.component';
+
 import { RendezVousUserComponent } from './components/private/rendez-vous-user/rendez-vous-user.component';
 import { RendezVousMoniteursComponent } from './components/private/rendez-vous-moniteurs/rendez-vous-moniteurs.component';
 import { AddUserComponent } from './components/private/users-management/add-user/add-user.component';
@@ -15,11 +15,18 @@ import { UpdateUserComponent } from './components/private/users-management/updat
 import { GuserComponent } from './components/private/users-management/guser/guser.component';
 import { GvehiculeComponent } from './components/private/cars-management/gvehicule/gvehicule.component';
 import { AddCarComponent } from './components/private/cars-management/add-car/add-car.component';
+import { MoniteursComponent } from './components/private/monitors-management/moniteurs/moniteurs.component';
+import { AddMonitorComponent } from './components/private/monitors-management/add-monitor/add-monitor.component';
+import { TopbarComponent } from './components/private/topbar/topbar.component';
 
 
 
 
 const routes: Routes = [
+  {
+    path: "topbar",
+    component: TopbarComponent,
+  },
   {
     path: "",
     component: HomeComponent
@@ -63,6 +70,10 @@ const routes: Routes = [
   {
     path: "Gmoniteurs",
     component: MoniteursComponent
+  },
+  {
+    path: "add-monitor",
+    component: AddMonitorComponent,
   },
   {
     path: "RendezVousUser",

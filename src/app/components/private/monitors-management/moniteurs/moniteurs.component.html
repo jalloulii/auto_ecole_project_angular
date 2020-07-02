@@ -21,20 +21,29 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">User Gestion</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Moniteurs Gestion</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
                 <div class="row">
                     <!-- Area Chart -->
                     <div class="table_users col-xl-12 col-lg-12">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">liste des utilisateurs</h6>
-                                <button routerLink="/user-add" class="btn btn-info">add User</button>
+                                <h6 class="m-0 font-weight-bold text-primary">liste des moniteurs</h6>
+                                <button routerLink="/add-monitor" class="btn btn-info">add Moniteur</button>
                             </div>
-                            <div *ngIf="users.length==0" class="alert alert-warning">users table is empty</div>
+                           
+                            <div *ngIf="moniteurs.length==0" class="alert alert-warning">monitors table is empty</div>
+
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
@@ -51,31 +60,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let user of users;let i = index">
+                                            <tr *ngFor="let moniteur of moniteurs;let i = index">
                                                 <td> {{i+1}} </td>
-                                                <td>{{user.firstname}}</td>
-                                                <td>{{user.lastname}}</td>
-                                                <td>{{user.email}}</td>
-                                                <td>{{user.phone}}</td>
+                                                <td>{{moniteur.firstname}}</td>
+                                                <td>{{moniteur.lastname}}</td>
+                                                <td>{{moniteur.email}}</td>
+                                                <td>{{moniteur.phone}}</td>
                                                 <td>
-                                                    <div *ngIf="!user.etat" class="badge-sm badge-danger badge">inactive
+                                                    <div *ngIf="!moniteur.etat" class="badge-sm badge-danger badge">
+                                                        inactive
                                                     </div>
-                                                    <div *ngIf="user.etat" class="badge-sm badge-success badge">active
+                                                    <div *ngIf="moniteur.etat" class="badge-sm badge-success badge">
+                                                        active
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <button (click)="updateUser(user)" class="btn btn-sm" [ngClass]="{
-                                                        'btn-success':!user.etat,
-                                                        'btn-danger':user.etat
-                                                    }">
+                                                    <button (click)="updateMoniteur(moniteur)" class="btn btn-sm"
+                                                        [ngClass]="{
+                                                'btn-success':!moniteur.etat,
+                                                'btn-danger':moniteur.etat
+                                            }">
 
                                                         <i class="fas" [ngClass]="{
-                                                            'fa-user-check':!user.etat,
-                                                            'fa-user-lock':user.etat
-                                                        }"></i>
+                                                    'fa-user-check':!moniteur.etat,
+                                                    'fa-user-lock':moniteur.etat
+                                                }"></i>
 
                                                     </button>
-                                                    <button (click)="deletUser(user,i)"
+                                                    <button (click)="deletMoniteur(moniteur,i)"
                                                         class="btn btn-sm btn-danger ml-3"><i
                                                             class="far fa-trash-alt"></i></button>
                                                     <button class="btn btn-sm btn-warning ml-3">update</button>
@@ -91,8 +103,6 @@
 
 
             </div>
-            <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
 

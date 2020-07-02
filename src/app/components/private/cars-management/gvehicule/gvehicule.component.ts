@@ -20,5 +20,17 @@ export class GvehiculeComponent implements OnInit {
       }
     )
   }
-
+  deletCar(car, index) {
+    console.log("deleting user " + index)
+    //let index = this.users.indexOf(user);
+    this.cars.splice(index, 1);
+    this.userService.deletCar(car._id).subscribe(
+      res => {
+        console.log('car deleted');
+      },
+      err => {
+        console.log('car not deleted');
+      }
+    );
+  }
 }

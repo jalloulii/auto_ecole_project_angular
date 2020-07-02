@@ -21,7 +21,7 @@ import { DashboardComponent } from './components/private/dashboard/dashboard.com
 import { SidebarComponent } from './components/private/sidebar/sidebar.component';
 
 
-import { MoniteursComponent } from './components/private/moniteurs/moniteurs.component';
+
 import { RendezVousUserComponent } from './components/private/rendez-vous-user/rendez-vous-user.component';
 import { RendezVousMoniteursComponent } from './components/private/rendez-vous-moniteurs/rendez-vous-moniteurs.component';
 import { AddUserComponent } from './components/private/users-management/add-user/add-user.component';
@@ -29,6 +29,10 @@ import { UpdateUserComponent } from './components/private/users-management/updat
 import { GuserComponent } from './components/private/users-management/guser/guser.component';
 import { GvehiculeComponent } from './components/private/cars-management/gvehicule/gvehicule.component';
 import { AddCarComponent } from './components/private/cars-management/add-car/add-car.component';
+
+import { MoniteursComponent } from './components/private/monitors-management/moniteurs/moniteurs.component';
+import { AddMonitorComponent } from './components/private/monitors-management/add-monitor/add-monitor.component';
+import { TopbarComponent } from './components/private/topbar/topbar.component';
 
 
 
@@ -56,6 +60,8 @@ import { AddCarComponent } from './components/private/cars-management/add-car/ad
     AddUserComponent,
     UpdateUserComponent,
     AddCarComponent,
+    AddMonitorComponent,
+    TopbarComponent,
 
 
 
