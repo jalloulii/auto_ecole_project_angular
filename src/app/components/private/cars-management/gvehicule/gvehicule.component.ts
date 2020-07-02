@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UeserService } from 'src/app/services/ueser.service';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'app-gvehicule',
@@ -8,13 +9,13 @@ import { UeserService } from 'src/app/services/ueser.service';
 })
 export class GvehiculeComponent implements OnInit {
   cars = [];
-  constructor(private userService: UeserService) { }
+  constructor(private carService: CarService) { }
 
   ngOnInit(): void {
     this.getAllCars();
   }
   getAllCars() {
-    this.userService.allCars().subscribe(
+    this.carService.allCars().subscribe(
       res => {
         this.cars = res;
       }
@@ -24,7 +25,7 @@ export class GvehiculeComponent implements OnInit {
     console.log("deleting user " + index)
     //let index = this.users.indexOf(user);
     this.cars.splice(index, 1);
-    this.userService.deletCar(car._id).subscribe(
+    this.carService.deletCar(car._id).subscribe(
       res => {
         console.log('car deleted');
       },

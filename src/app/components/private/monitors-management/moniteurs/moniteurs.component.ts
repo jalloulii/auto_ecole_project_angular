@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UeserService } from 'src/app/services/ueser.service';
+import { MonitorService } from 'src/app/services/monitor.service';
 @Component({
   selector: 'app-moniteurs',
   templateUrl: './moniteurs.component.html',
@@ -7,15 +8,15 @@ import { UeserService } from 'src/app/services/ueser.service';
 })
 export class MoniteursComponent implements OnInit {
   moniteurs = [];
-  constructor(private userService: UeserService) { }
+  constructor(private monitorService: MonitorService) { }
 
   ngOnInit(): void {
     this.getAllMoniteurs();
 
   }
-  
+
   getAllMoniteurs() {
-    this.userService.allMoniteurs().subscribe(
+    this.monitorService.allMoniteurs().subscribe(
       res => {
         this.moniteurs = res;
         console.log(this.moniteurs);
@@ -25,7 +26,7 @@ export class MoniteursComponent implements OnInit {
   }
   updateMoniteur(moniteur) {
 
-    this.userService.updateMoniteur(moniteur._id).subscribe(
+    this.monitorService.updateMoniteur(moniteur._id).subscribe(
       res => {
         console.log('user updated');
         this.getAllMoniteurs();
@@ -39,7 +40,7 @@ export class MoniteursComponent implements OnInit {
     console.log("deleting moniteur " + index)
     //let index = this.users.indexOf(user);
     this.moniteurs.splice(index, 1);
-    this.userService.deletMoniteur(moniteur._id).subscribe(
+    this.monitorService.deletMoniteur(moniteur._id).subscribe(
       res => {
         console.log('moniteur deleted');
       },

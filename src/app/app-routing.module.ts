@@ -18,6 +18,7 @@ import { AddCarComponent } from './components/private/cars-management/add-car/ad
 import { MoniteursComponent } from './components/private/monitors-management/moniteurs/moniteurs.component';
 import { AddMonitorComponent } from './components/private/monitors-management/add-monitor/add-monitor.component';
 import { TopbarComponent } from './components/private/topbar/topbar.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -45,43 +46,55 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "user-list",
     component: GuserComponent
+    ,
+    canActivate: [AuthGuard]
   },
   {
     path: "user-add",
     component: AddUserComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: "user-update",
-    component: UpdateUserComponent
+    component: UpdateUserComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "Gvahicule",
-    component: GvehiculeComponent
+    component: GvehiculeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "car-add",
     component: AddCarComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "Gmoniteurs",
-    component: MoniteursComponent
+    component: MoniteursComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "add-monitor",
     component: AddMonitorComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "RendezVousUser",
-    component: RendezVousUserComponent
+    component: RendezVousUserComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "RendezVousMoniteurs",
     component: RendezVousMoniteursComponent,
+    canActivate: [AuthGuard]
   },
 
 

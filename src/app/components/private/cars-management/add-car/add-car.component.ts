@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { UeserService } from 'src/app/services/ueser.service';
+
 import { Router } from '@angular/router';
 import { User, Car } from 'src/app/models/user';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'app-add-car',
@@ -14,7 +15,7 @@ export class AddCarComponent implements OnInit {
   public addCar: FormGroup;
 
 
-  constructor(public fb: FormBuilder, private userService: UeserService, private router: Router) {
+  constructor(public fb: FormBuilder, private carService: CarService, private router: Router) {
     // zedneh ahna lel control
     let addCarControll = {
       matricule: new FormControl("", [
@@ -59,7 +60,7 @@ export class AddCarComponent implements OnInit {
       data.couleur
 
     );
-    this.userService.addCar(car).subscribe(
+    this.carService.addCar(car).subscribe(
       res => {
         this.router.navigateByUrl('/Gvahicule')
       },

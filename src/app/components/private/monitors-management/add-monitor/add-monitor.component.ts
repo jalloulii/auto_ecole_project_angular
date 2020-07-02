@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms"; // zedna hedhy
 import { User, Moniteur } from 'src/app/models/user';
-import { UeserService } from 'src/app/services/ueser.service';
+
 import { Router } from '@angular/router';
+import { MonitorService } from 'src/app/services/monitor.service';
 
 @Component({
   selector: 'app-add-monitor',
@@ -14,7 +15,7 @@ export class AddMonitorComponent implements OnInit {
   //zedneh ahna lel form : 
   public addMonitor: FormGroup;
 
-  constructor(public fb: FormBuilder, private userService: UeserService, private router: Router) {
+  constructor(public fb: FormBuilder, private monitorService: MonitorService, private router: Router) {
     // zedneh ahna lel control
     let addMonitorControll = {
       firstname: new FormControl("", [
@@ -74,7 +75,7 @@ export class AddMonitorComponent implements OnInit {
       data.email,
       data.password,
     );
-    this.userService.addMoniteurr(moniteur).subscribe(
+    this.monitorService.addMoniteurr(moniteur).subscribe(
       res => {
         this.router.navigateByUrl('/Gmoniteurs')
       },

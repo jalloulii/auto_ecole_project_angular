@@ -27,12 +27,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    if (this.userService.isLoggedIn()) {
+      this.router.navigateByUrl("/dashboard")
+    }
   }
   // functions :
   get myemail() { return this.loginForm.get('email'); }
   get mypassword() { return this.loginForm.get('password'); }
-  
+
   loginUser() {
     let data = this.loginForm.value;
 
