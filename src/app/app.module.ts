@@ -33,6 +33,10 @@ import { AddCarComponent } from './components/private/cars-management/add-car/ad
 import { MoniteursComponent } from './components/private/monitors-management/moniteurs/moniteurs.component';
 import { AddMonitorComponent } from './components/private/monitors-management/add-monitor/add-monitor.component';
 import { TopbarComponent } from './components/private/topbar/topbar.component';
+import { MonitorUpdateComponent } from './components/private/monitors-management/monitor-update/monitor-update.component';
+import { UpdateCarComponent } from './components/private/cars-management/update-car/update-car.component';
+import { MeetCodeComponent } from './components/private/sidebar/meet-code/meet-code.component';
+import { MeetConduiteComponent } from './components/private/sidebar/meet-conduite/meet-conduite.component';
 
 
 
@@ -62,6 +66,10 @@ import { TopbarComponent } from './components/private/topbar/topbar.component';
     AddCarComponent,
     AddMonitorComponent,
     TopbarComponent,
+    MonitorUpdateComponent,
+    UpdateCarComponent,
+    MeetCodeComponent,
+    MeetConduiteComponent,
 
 
 

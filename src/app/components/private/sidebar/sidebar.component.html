@@ -57,6 +57,19 @@
       <span>rendez vous Moniteurs</span></a>
 
   </li>
+  
+  <li *ngIf="isAdmin" class="nav-item active">
+    <a routerLink="/meet_code" class="nav-link">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>rendez vous code</span></a>
+
+  </li>
+  <li *ngIf="isAdmin" class="nav-item active">
+    <a routerLink="/RendezVousMoniteurs" class="nav-link">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>rendez vous Conduite</span></a>
+
+  </li>
 
 
 </ul>

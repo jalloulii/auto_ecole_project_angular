@@ -20,6 +20,8 @@ export class UeserService {
   private _allUserUrl = this._baseLocalUrl + "/user/all";
   private _updateUser = this._baseLocalUrl + "/user/update-state";
   private _deleteUser = this._baseLocalUrl + "/user/delete";
+  private _updateForm = this._baseLocalUrl + "/user/update-form";
+  private _getOneUser = this._baseLocalUrl + "/user/one";
 
 
 
@@ -109,6 +111,14 @@ export class UeserService {
     return this.http.patch<any>(this._updateUser + "/" + id, null, { headers: headers_options });
   }
 
+  updateForm(id, user) {
+    let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
+    return this.http.patch<any>(this._updateForm + "/" + id, user, { headers: headers_options });
+  }
+  getOneUser(id) {
+    let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
+    return this.http.get<any>(this._getOneUser + "/" + id, { headers: headers_options });
+  }
 
   deletUser(id) {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));

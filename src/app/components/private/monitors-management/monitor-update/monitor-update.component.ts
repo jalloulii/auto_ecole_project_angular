@@ -3,18 +3,19 @@ import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms"
 import { User } from 'src/app/models/user';
 import { UeserService } from 'src/app/services/ueser.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CarService } from 'src/app/services/car.service';
+import { MonitorService } from 'src/app/services/monitor.service';
 
 @Component({
-  selector: 'app-update-user',
-  templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.scss']
+  selector: 'app-monitor-update',
+  templateUrl: './monitor-update.component.html',
+  styleUrls: ['./monitor-update.component.scss']
 })
-export class UpdateUserComponent implements OnInit {
-  //zedneh ahna lel form : 
-  public updateUser: FormGroup;
+export class MonitorUpdateComponent implements OnInit {
 
-  constructor(public fb: FormBuilder, private userService: UeserService, private router: Router, private activeroute: ActivatedRoute) {
+  //zedneh ahna lel form : 
+  public updateMonitor: FormGroup;
+
+  constructor(public fb: FormBuilder, private userService: MonitorService, private router: Router, private activeroute: ActivatedRoute) {
     // zedneh ahna lel control
     let updateUserController = {
       firstname: new FormControl("", [
@@ -42,15 +43,15 @@ export class UpdateUserComponent implements OnInit {
 
     }
     // zedna edha lel liaison inputs to form
-    this.updateUser = fb.group(updateUserController); // amalna liaison bin les input w lformulaire !
+    this.updateMonitor = fb.group(updateUserController); // amalna liaison bin les input w lformulaire !
   }
 
   ngOnInit(): void {
     let userId = this.activeroute.snapshot.params.id;
     this.userService
-      .getOneUser(userId)
+      .getOneMonitor(userId)
       .subscribe(res => {
-        let user = res; this.updateUser
+        let user = res; this.updateMonitor
           .patchValue(
             {
               firstname: user.firstname,
@@ -67,22 +68,22 @@ export class UpdateUserComponent implements OnInit {
 
   // function errors 
 
-  get myfirstname() { return this.updateUser.get('firstname'); }
-  get mylastname() { return this.updateUser.get('lastname'); }
-  get myemail() { return this.updateUser.get('email'); }
-  get myphone() { return this.updateUser.get('phone'); }
-  get mypassword() { return this.updateUser.get('password'); }
+  get myfirstname() { return this.updateMonitor.get('firstname'); }
+  get mylastname() { return this.updateMonitor.get('lastname'); }
+  get myemail() { return this.updateMonitor.get('email'); }
+  get myphone() { return this.updateMonitor.get('phone'); }
+  get mypassword() { return this.updateMonitor.get('password'); }
 
 
-  updateInfoUser() {
-    let userId = this.activeroute.snapshot.params.id;
-    let data = this.updateUser.value;
+  updateInfoMonitor() {
+    let monitorId = this.activeroute.snapshot.params.id;
+    let data = this.updateMonitor.value;
     let user = new User(null, data.firstname, data.lastname, data.phone, data.email, null);
-    this.userService.updateForm(userId, user).subscribe(res => {
+    this.userService.updateForm(monitorId, user).subscribe(res => {
       console.log("user Info updated");
       console.log(res);
-      this.router.navigateByUrl('/user-list')
+      this.router.navigateByUrl('/Gmoniteurs')
     }, err => { console.log("user not updated"); })
   }
-}
 
+}

@@ -11,13 +11,22 @@ export class MonitorService {
   private _addMoniteur = this._baseLocalUrl + "/moniteur/register/";
   private _deleteMoniteur = this._baseLocalUrl + "/moniteur/delete";
   private _updateMoniteur = this._baseLocalUrl + "/moniteur/update-state";
+  private _updateForm = this._baseLocalUrl + "/moniteur/update-form";
+  private _getOneMonitor = this._baseLocalUrl + "/moniteur/one";
   constructor(private http: HttpClient) { }
   addMoniteurr(moniteur) {
     return this.http.post<any>(this._addMoniteur, moniteur);
 
 
   }
-
+  updateForm(id, monitor) {
+    let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
+    return this.http.patch<any>(this._updateForm + "/" + id, monitor, { headers: headers_options });
+  }
+  getOneMonitor(id) {
+    let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
+    return this.http.get<any>(this._getOneMonitor + "/" + id, { headers: headers_options });
+  }
   allMoniteurs() {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
 

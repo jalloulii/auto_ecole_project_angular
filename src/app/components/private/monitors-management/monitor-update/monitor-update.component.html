@@ -21,7 +21,7 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">User Gestion</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Moniteurs Gestion</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">UPDATE USER</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">UPDATE MONITOR</h6>
                             <div class="dropdown no-arrow">
 
                             </div>
@@ -42,67 +42,55 @@
                         <div class="card-body">
                             <div class="chart-area">
                               
-                                <form [formGroup]="updateUser" (ngSubmit)="updateInfoUser()" class="mx-3">
+                                <form [formGroup]="updateMonitor" (ngSubmit)=" updateInfoMonitor()" class="mx-3">
                                     <div class="md-form mb-5">
                                         <i class="fas fa-user prefix grey-text"></i>
-                                        <input formControlName="firstname" type="text" id="orangeForm-name"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-name">firstname</label>
+                                        <input formControlName="firstname" type="text" id="orangeForm-name" class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
                                         <div class="text-danger" *ngIf="myfirstname.touched && myfirstname.invalid">
                                             <div *ngIf="myfirstname.errors.required">firstname is required</div>
                                             <div *ngIf="myfirstname.errors.pattern">firstname in invalid</div>
-                                            <div *ngIf="myfirstname.errors.minlength">firstname must contains 2
-                                                characteres at least
+                                            <div *ngIf="myfirstname.errors.minlength">firstname must contains 2 characteres at least
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-form mb-5">
                                         <i class="fas fa-user prefix grey-text"></i>
-                                        <input formControlName="lastname" type="text" id="orangeForm-name"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-name">lastname</label>
+                                        <input formControlName="lastname" type="text" id="orangeForm-name" class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
                                         <div class="text-danger" *ngIf="mylastname.touched && mylastname.invalid">
                                             <div *ngIf="mylastname.errors.required">lastname is required</div>
                                             <div *ngIf="mylastname.errors.pattern">lastname is invalid</div>
-                                            <div *ngIf="mylastname.errors.minlength">last name must contains at least 2
-                                                characteres
+                                            <div *ngIf="mylastname.errors.minlength">last name must contains at least 2 characteres
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-form mb-5">
                                         <i class="fas fa-phone prefix grey-text"></i>
-                                        <input formControlName="phone" type="text" id="orangeForm-name"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-name">phone</label>
+                                        <input formControlName="phone" type="text" id="orangeForm-name" class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
                                         <div class="text-danger" *ngIf=" myphone.touched &&  myphone.invalid">
                                             <div *ngIf="myphone.errors.required">phone is required</div>
                                             <div *ngIf="myphone.errors.pattern">phone is invalid</div>
-                                            <div *ngIf="myphone.errors.minlength">phone must contains 8 characteres at
-                                                least</div>
-                                            <div *ngIf="myphone.errors.maxlength">phone must contains max 8 characteres
-                                            </div>
+                                            <div *ngIf="myphone.errors.minlength">phone must contains 8 characteres at least</div>
+                                            <div *ngIf="myphone.errors.maxlength">phone must contains max 8 characteres </div>
                                         </div>
                                     </div>
                                     <div class="md-form mb-5">
                                         <i class="fas fa-envelope prefix grey-text"></i>
-                                        <input formControlName="email" type="email" id="orangeForm-email"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-email">email</label>
+                                        <input formControlName="email" type="email" id="orangeForm-email" class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-email"></label>
                                         <div class="text-danger" *ngIf=" myemail.touched &&  myemail.invalid">
                                             <div *ngIf="myemail.errors.required">email is required</div>
                                             <div *ngIf="myemail.errors.email">email is invalid</div>
-
+                
                                         </div>
                                     </div>
-
-
+                
+                
                                     <div class="d-flex justify-content-center">
                                         <div>
-                                            <input type="submit" value="Update user" [disabled]="updateUser.invalid "
+                                            <input type="submit" value="update monitor" [disabled]="updateMonitor.invalid "
                                                 class="btn btn-primary mr-2 mb-2">
                                         </div>
                                     </div>
@@ -113,7 +101,7 @@
                 </div>
 
                 <!-- Pie Chart -->
-
+            
 
 
 

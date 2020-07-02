@@ -13,6 +13,7 @@
 
             <!-- Topbar -->
             <app-topbar></app-topbar>
+
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
@@ -20,21 +21,29 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Vheicules Gestion</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Moniteurs Gestion</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
 
+
+
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
                 <div class="row">
                     <!-- Area Chart -->
-                    <div class="col-xl-12 col-lg-12">
+                    <div class="table_users col-xl-12 col-lg-12">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">liste des voiture</h6>
-                                <button routerLink="/car-add" class="btn btn-info">add Car</button>
+                                <h6 class="m-0 font-weight-bold text-primary">code meet list</h6>
+                                <button class="btn btn-info">add meeting</button>
                             </div>
-                            <div *ngIf="cars.length==0" class="alert alert-warning">cars table is empty</div>
+
+                            <div class="alert alert-warning">meeting table is empty</div>
+
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
@@ -42,27 +51,19 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>matricule</th>
-                                                <th>marque</th>
-                                                <th>couleur</th>
-
+                                                <th>data</th>
+                                                <th>time</th>
+                                                <th>user-id</th>
                                                 <th>#</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let car of cars;let i =index">
-                                                <td> {{i+1}} </td>
-                                                <td>{{car.matricule}} </td>
-                                                <td>{{car.marque}} </td>
-                                                <td>{{car.couleur}} </td>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
 
-
-                                                <td>
-                                                    <button [routerLink]="['/update-car',car._id]" class="btn btn-warning btn-sm mr-3"><i class="far fa-edit"></i></button>
-                                                    <button (click)="deletCar(car,i)" class="btn btn-sm btn-danger"><i
-                                                            class="far fa-trash-alt"></i></button>
-
-                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -74,8 +75,6 @@
 
 
             </div>
-            <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
 

@@ -19,6 +19,10 @@ import { MoniteursComponent } from './components/private/monitors-management/mon
 import { AddMonitorComponent } from './components/private/monitors-management/add-monitor/add-monitor.component';
 import { TopbarComponent } from './components/private/topbar/topbar.component';
 import { AuthGuard } from './guards/auth.guard';
+import { MonitorUpdateComponent } from './components/private/monitors-management/monitor-update/monitor-update.component';
+import { UpdateCarComponent } from './components/private/cars-management/update-car/update-car.component';
+import { MeetCodeComponent } from './components/private/sidebar/meet-code/meet-code.component';
+import { MeetConduiteComponent } from './components/private/sidebar/meet-conduite/meet-conduite.component';
 
 
 
@@ -62,7 +66,7 @@ const routes: Routes = [
 
   },
   {
-    path: "user-update",
+    path: "user-update/:id",
     component: UpdateUserComponent,
     canActivate: [AuthGuard]
   },
@@ -77,6 +81,10 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: "update-car/:id",
+    component: UpdateCarComponent,
+  },
+  {
     path: "Gmoniteurs",
     component: MoniteursComponent,
     canActivate: [AuthGuard]
@@ -85,6 +93,10 @@ const routes: Routes = [
     path: "add-monitor",
     component: AddMonitorComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "update-monitor/:id",
+    component: MonitorUpdateComponent,
   },
   {
     path: "RendezVousUser",
@@ -96,8 +108,16 @@ const routes: Routes = [
     component: RendezVousMoniteursComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: "meet_code",
+    component: MeetCodeComponent,
 
 
+  },
+  {
+    path: "meet_conduite",
+    component: MeetConduiteComponent,
+  },
   {
     path: "**",
     component: Page404Component
