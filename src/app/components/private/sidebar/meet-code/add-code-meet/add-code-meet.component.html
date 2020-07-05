@@ -1,0 +1,118 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Meeting Gestion
+                    </h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+
+                <!--begin modal-->
+                <!-- Area Chart -->
+                <div class="table_users col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">ADD CODE MEET</h6>
+                            <div class="dropdown no-arrow">
+
+                            </div>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <div class=" text-center">
+
+                                </div>
+                                <form [formGroup]="addCodeMeet" (ngSubmit)="add_Code()" class="mx-3">
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="date" type="date" id="orangeForm-name"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
+                                        <div class="text-danger" *ngIf="mydate.touched && mydate.invalid">
+                                            <div *ngIf="mydate.errors.required">date is required</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="temps" type="time" id="orangeForm-name"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
+                                        <div class="text-danger" *ngIf="mytime.touched && mytime.invalid">
+                                            <div *ngIf="mytime.errors.required">time is required</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
+                                        <select formControlName="userId" class="mdb-select md-form">
+                                            <option value="" disabled selected>Choose USER ID</option>
+                                            <option *ngFor="let userid of alluserID">{{userid._id}}</option>
+                                        </select>
+                                        <div class="text-danger" *ngIf=" myuserId.touched &&  myuserId.invalid">
+                                            <div *ngIf="myuserId.errors.required">user ID is required</div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="d-flex justify-content-center">
+                                        <div>
+                                            <input type="submit" value="ADD CODE MEET" [disabled]="addCodeMeet.invalid "
+                                                class="btn btn-primary mr-2 mb-2">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!--end modal-->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

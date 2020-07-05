@@ -37,6 +37,14 @@ import { MonitorUpdateComponent } from './components/private/monitors-management
 import { UpdateCarComponent } from './components/private/cars-management/update-car/update-car.component';
 import { MeetCodeComponent } from './components/private/sidebar/meet-code/meet-code.component';
 import { MeetConduiteComponent } from './components/private/sidebar/meet-conduite/meet-conduite.component';
+import { AddCodeMeetComponent } from './components/private/sidebar/meet-code/add-code-meet/add-code-meet.component';
+
+import { DeleteCodeMeetComponent } from './components/private/sidebar/meet-code/delete-code-meet/delete-code-meet.component';
+import { UpdateCodeMeetComponent } from './components/private/sidebar/meet-code/update-code-meet/update-code-meet.component';
+import { UpdateConduiteMeetComponent } from './components/private/sidebar/meet-conduite/update-conduite-meet/update-conduite-meet.component';
+import { AddConduiteMeetComponent } from './components/private/sidebar/meet-conduite/add-conduite-meet/add-conduite-meet.component';
+
+
 
 
 
@@ -70,6 +78,13 @@ import { MeetConduiteComponent } from './components/private/sidebar/meet-conduit
     UpdateCarComponent,
     MeetCodeComponent,
     MeetConduiteComponent,
+    AddCodeMeetComponent,
+
+    DeleteCodeMeetComponent,
+    UpdateCodeMeetComponent,
+    UpdateConduiteMeetComponent,
+    AddConduiteMeetComponent,
+
 
 
 

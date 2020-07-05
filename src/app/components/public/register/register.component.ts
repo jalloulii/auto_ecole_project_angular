@@ -56,6 +56,10 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.userService.isLoggedIn()) {
+      this.router.navigateByUrl("/dashboard");
+
+    }
   }
 
   // function errors 

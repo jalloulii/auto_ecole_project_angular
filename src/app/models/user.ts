@@ -1,3 +1,5 @@
+import { Time } from '@angular/common';
+
 export class User {
 
     constructor(
@@ -29,6 +31,28 @@ export class Car {
         private _matricule?: String,
         private _marque?: String,
         private _couleur?: String,
+
+    ) { }
+
+}
+export class CodeMeet {
+
+    constructor(
+        private _date?: String,
+        private _temps?: String,
+        private _userId?: String,
+
+    ) { }
+
+}
+export class ConduiteMeet {
+
+    constructor(
+        private _date?: String,
+        private _temps?: String,
+        private _userId?: String,
+        private _monitorId?: String,
+        private _carId?: String,
 
     ) { }
 

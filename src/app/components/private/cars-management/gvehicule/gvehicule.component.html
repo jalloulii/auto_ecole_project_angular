@@ -38,7 +38,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <table class="table">
+                                    <table *ngIf="cars.length!=0" class="table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -58,7 +58,9 @@
 
 
                                                 <td>
-                                                    <button [routerLink]="['/update-car',car._id]" class="btn btn-warning btn-sm mr-3"><i class="far fa-edit"></i></button>
+                                                    <button [routerLink]="['/update-car',car._id]"
+                                                        class="btn btn-warning btn-sm mr-3"><i
+                                                            class="far fa-edit"></i></button>
                                                     <button (click)="deletCar(car,i)" class="btn btn-sm btn-danger"><i
                                                             class="far fa-trash-alt"></i></button>
 

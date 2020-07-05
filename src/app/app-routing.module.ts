@@ -23,6 +23,11 @@ import { MonitorUpdateComponent } from './components/private/monitors-management
 import { UpdateCarComponent } from './components/private/cars-management/update-car/update-car.component';
 import { MeetCodeComponent } from './components/private/sidebar/meet-code/meet-code.component';
 import { MeetConduiteComponent } from './components/private/sidebar/meet-conduite/meet-conduite.component';
+import { AddCodeMeetComponent } from './components/private/sidebar/meet-code/add-code-meet/add-code-meet.component';
+
+import { AddConduiteMeetComponent } from './components/private/sidebar/meet-conduite/add-conduite-meet/add-conduite-meet.component';
+import { UpdateConduiteMeetComponent } from './components/private/sidebar/meet-conduite/update-conduite-meet/update-conduite-meet.component';
+import { UpdateCodeMeetComponent } from './components/private/sidebar/meet-code/update-code-meet/update-code-meet.component';
 
 
 
@@ -111,12 +116,26 @@ const routes: Routes = [
   {
     path: "meet_code",
     component: MeetCodeComponent,
-
-
+  },
+  {
+    path: "add_code_meet",
+    component: AddCodeMeetComponent,
   },
   {
     path: "meet_conduite",
     component: MeetConduiteComponent,
+  },
+  {
+    path: "add_conduite_meet",
+    component: AddConduiteMeetComponent
+  },
+  {
+    path: "update_conduite_meet/:id",
+    component: UpdateConduiteMeetComponent,
+  },
+  {
+    path: "update_code_meet/:id",
+    component: UpdateCodeMeetComponent,
   },
   {
     path: "**",
