@@ -41,6 +41,8 @@ export class UeserService {
   }
 
 
+  //5arajna el donne mel token stana blh 5let ba7theya hhhhhhhhhhhhhhhhhh behy kamle rigel ok
+
 
 
 
@@ -54,6 +56,7 @@ export class UeserService {
       const helper = new JwtHelperService();
       const decodedToken = helper.decodeToken(token);
       if (decodedToken.role == "admin") {
+        console.log(decodedToken);
         return true;
       } else {
         return false;
@@ -67,7 +70,9 @@ export class UeserService {
     if (token) {
       const helper = new JwtHelperService();
       const decodedToken = helper.decodeToken(token);
+      
       if (decodedToken.role == "user") {
+        console.log(decodedToken.etat);
         return true;
       } else {
         return false;
@@ -89,7 +94,9 @@ export class UeserService {
   }
   isLoggedIn() {
     let token = localStorage.getItem("token");
+
     if (token) {
+
       return true;
 
     } else { return false; }

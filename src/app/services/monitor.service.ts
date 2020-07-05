@@ -13,6 +13,7 @@ export class MonitorService {
   private _updateMoniteur = this._baseLocalUrl + "/moniteur/update-state";
   private _updateForm = this._baseLocalUrl + "/moniteur/update-form";
   private _getOneMonitor = this._baseLocalUrl + "/moniteur/one";
+  private _loginMonitor = this._baseLocalUrl + "/moniteur/login";
   constructor(private http: HttpClient) { }
   addMoniteurr(moniteur) {
     return this.http.post<any>(this._addMoniteur, moniteur);
@@ -40,5 +41,8 @@ export class MonitorService {
   deletMoniteur(id) {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
     return this.http.delete<any>(this._deleteMoniteur + "/" + id, { headers: headers_options });
+  }
+  loginMonitor(monitor: Moniteur) {
+    return this.http.post<any>(this._loginMonitor, monitor);
   }
 }

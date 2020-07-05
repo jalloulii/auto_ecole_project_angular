@@ -13,9 +13,14 @@ export class ConduiteMeetService {
   private _deleteMeetingConduite = this._baseLocalUrl + "/rendezvousConduite/delete/";
   private _updateForm = this._baseLocalUrl + "/rendezvousConduite/update-form";
   private _getOneMeetingConduite = this._baseLocalUrl + "/rendezvousConduite/one";
+  private _getALLConduitemeetUSers = this._baseLocalUrl + "/rendezvousConduite/allUserConduitebyID/";
 
   constructor(private http: HttpClient) { }
-
+  allCodeMeetMONITORS() {
+    let user_id = new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
+    let header_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
+    return this.http.get<any>(this._getALLConduitemeetUSers + user_id, { headers: header_options });
+  }
   getAllConduite() {
     let header_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
     return this.http.get<any>(this._allMeetingConduiteUrl, { headers: header_options });

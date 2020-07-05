@@ -26,7 +26,79 @@
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
 
+                <div class="row">
+                    <!-- Area Chart -->
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">my code meet list</h6>
 
+                            </div>
+                            <div *ngIf="allmeetOfoneIDuser.length==0" class="alert alert-warning">my code meets table is
+                                empty</div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>date</th>
+                                                <th>time</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let idUserMeets of allmeetOfoneIDuser;let i =index">
+                                                <td> {{i+1}} </td>
+                                                <td>{{idUserMeets.date}} </td>
+                                                <td>{{idUserMeets.temps}} </td>
+
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">my conduite meet list</h6>
+
+                            </div>
+                            <div *ngIf="allmeetOfoneIDmonitor.length==0" class="alert alert-warning">my conduite meets
+                                table is empty</div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>date</th>
+                                                <th>time</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let idmonitorMeets of allmeetOfoneIDmonitor;let j =index">
+                                                <td> {{j+1}} </td>
+                                                <td>{{idmonitorMeets.date}} </td>
+                                                <td>{{idmonitorMeets.temps}} </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!-- /.container-fluid -->

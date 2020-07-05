@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UeserService } from 'src/app/services/ueser.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
+import { User, Moniteur } from 'src/app/models/user';
+import { MonitorService } from 'src/app/services/monitor.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { User } from 'src/app/models/user';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  constructor(public fb: FormBuilder, private userService: UeserService, private router: Router) { // Q fb 
+  constructor(public fb: FormBuilder, private userService: UeserService, private monitorservice: MonitorService, private router: Router) { // Q fb 
     let logControlls = {
       email: new FormControl("", [
         Validators.required,
@@ -47,6 +48,31 @@ export class LoginComponent implements OnInit {
       data.password,
     );
     this.userService.loginUser(user).subscribe(
+      res => {
+
+        let token = res.token;
+        localStorage.setItem("token", token);
+
+        this.router.navigateByUrl('/dashboard');
+
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+  loginMonitor() {
+    let data = this.loginForm.value;
+
+    let monitor = new Moniteur(
+      null,
+      null,
+      null,
+      null,
+      data.email,
+      data.password,
+    );
+    this.monitorservice.loginMonitor(monitor).subscribe(
       res => {
 
         let token = res.token;
